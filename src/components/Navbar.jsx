@@ -1,24 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-      <div className="flex justify-evenly text-white bg-black h-[100px]">
-        <ul className="hidden md:flex text-lg justify-evenly w-full max-w-4xl">
-          <li className="mx-[25px] cursor-pointer flex items-center justify-center">
-            <Link to="/home" className="hover:text-gray-300">Home</Link>
-          </li>
-          <li className="mx-[25px] cursor-pointer flex items-center justify-center">
-            <Link to="/about" className="hover:text-gray-300">About</Link>
-          </li>
-          <li className="mx-[25px] cursor-pointer flex items-center justify-center">
-            <Link to="/login" className="hover:text-gray-300">Login</Link>
-          </li>
-          <li className="mx-[25px] cursor-pointer flex items-center justify-center">
-            <Link to="/signup" className="hover:text-gray-300">Signup</Link>
-          </li>
-        </ul>
-      </div>
+    <div>
+      <ul
+        className={`flex justify-evenly text-white bg-black h-[10px] transition-all duration-300 ${isHovered ? 'h-[50px]' : 'h-[25px]'}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+       <li className="mx-[25px] cursor-pointer flex items-center justify-center">
+          <Link to="/home" className="flex items-center space-x-2 hover:text-gray-300">
+            <i className="fas fa-home"></i>
+            <span>Home</span>
+          </Link>
+        </li>
+        <li className="mx-[25px] cursor-pointer flex items-center justify-center">
+          <Link to="/about" className="flex items-center space-x-2 hover:text-gray-300">
+            <i className="fas fa-info-circle"></i>
+            <span>About</span>
+          </Link>
+        </li>
+        <li className="mx-[25px] cursor-pointer flex items-center justify-center">
+          <Link to="/Order Now" className="flex items-center space-x-2 hover:text-gray-300">
+            <i className="fas fa-shopping-cart"></i>
+            <span>Order Now</span>
+          </Link>
+        </li>
+        <li className="mx-[25px] cursor-pointer flex items-center justify-center">
+          <Link to="/login" className="flex items-center space-x-2 hover:text-gray-300">
+            <i className="fas fa-sign-in-alt"></i>
+            <span>Login</span>
+          </Link>
+        </li>
+        <li className="mx-[25px] cursor-pointer flex items-center justify-center">
+          <Link to="/signup" className="flex items-center space-x-2 hover:text-gray-300">
+            <i className="fas fa-user-plus"></i>
+            <span>Signup</span>
+          </Link>
+        </li>
+      </ul>
+    </div>
   );
 }
 

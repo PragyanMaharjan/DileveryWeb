@@ -4,6 +4,7 @@ import About from "./components/About"
 import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Navbar from "./components/Navbar"
+import OrderNow from "./components/OrderNow"
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <BrowserRouter>
     <Navbar/>
       <Routes>
+        <Route path="/Order Now" element={<OrderNow/>}/>
           <Route path="/home" element={<Home/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/login" element={<Login/>}/>
