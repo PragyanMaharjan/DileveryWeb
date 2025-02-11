@@ -15,12 +15,12 @@ export default function LoginPage() {
     <div
       className="h-[800px] flex items-center justify-center"
       style={{
-        backgroundImage: 'url(https://i.pinimg.com/736x/a1/f8/37/a1f8373c980d19a750c38a7858b54085.jpg)',
+        backgroundImage: 'url(https://i.pinimg.com/736x/3c/70/42/3c7042909250af1a124cfe2bfbbab68e.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      <div className="bg-white bg-opacity-05 p-8 rounded shadow-md w-full max-w-sm">
+      <div className="bg-white opacity-75 p-8 rounded-xl shadow-md w-full max-w-sm">
         <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -49,14 +49,20 @@ export default function LoginPage() {
               required
             />
           </div>
-          <div className="flex items-center justify-between">
-            <button
+          <div className="flex items-center justify-center">
+            <button 
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer"
             >
               Sign In
             </button>
           </div>
+          <p className='flex items-center justify-center'>
+              Don't have an account?  
+              <a href="/signup" className="hover:text-blue-500 hover:text-blue-700 hover:underline font-normal">
+              Sign Up
+              </a>
+            </p>
         </form>
       </div>
     </div>

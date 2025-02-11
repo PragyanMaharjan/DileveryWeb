@@ -8,6 +8,11 @@ export default function SignupPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (phoneNumber.length !== 10) {
+      setError('Phone Number must be at least 10 characters long.');
+      return;
+    } 
+
     if (password.length < 8) {
       setError('Password must be at least 8 characters long.');
       return;
@@ -25,12 +30,12 @@ export default function SignupPage() {
     <div
       className="h-[800px] flex items-center justify-center"
       style={{
-        backgroundImage: 'url(https://i.pinimg.com/736x/48/84/14/48841451e190c78648ec723eb5cc4a1b.jpg)',
+        backgroundImage: 'url(https://i.pinimg.com/736x/78/0a/32/780a324ea49aa84ac97ed0ed962ad95b.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      <div className="bg-white bg-opacity-80 p-8 rounded shadow-md w-full max-w-sm">
+      <div className="bg-white opacity-75 p-8 shadow-md rounded-xl w-full max-w-sm">
         <h1 className="text-2xl font-bold mb-6 text-center">Sign Up</h1>
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
         <form onSubmit={handleSubmit}>
@@ -73,10 +78,10 @@ export default function SignupPage() {
               required
             />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-center">
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer"
+              className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer"
             >
               Sign Up
             </button>

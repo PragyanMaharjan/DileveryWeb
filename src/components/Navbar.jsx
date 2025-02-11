@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <div>
-      <ul
-        className={`flex justify-evenly text-white bg-black h-[10px] transition-all duration-300 ${isHovered ? 'h-[50px]' : 'h-[25px]'}`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-       <li className="mx-[25px] cursor-pointer flex items-center justify-center">
+      <ul className="flex justify-evenly text-white bg-black h-[50px]">
+        <li className="mx-[25px] cursor-pointer flex items-center justify-center">
           <Link to="/home" className="flex items-center space-x-2 hover:text-gray-300">
             <i className="fas fa-home"></i>
             <span>Home</span>
@@ -24,7 +18,7 @@ function Navbar() {
           </Link>
         </li>
         <li className="mx-[25px] cursor-pointer flex items-center justify-center">
-          <Link to="/Order Now" className="flex items-center space-x-2 hover:text-gray-300">
+          <Link to="/OrderNow" className="flex items-center space-x-2 hover:text-gray-300">
             <i className="fas fa-shopping-cart"></i>
             <span>Order Now</span>
           </Link>
